@@ -11,8 +11,4 @@ RUN curl -L "$TWEMPROXY_URL" | tar xzf - && \
 
 FROM alpine:3.7
 
-ENV LISTEN_PORT="11211" 
-
 COPY --from=builder /usr/local/sbin/nutcracker /usr/local/sbin/nutcracker
-
-EXPOSE $LISTEN_PORT
